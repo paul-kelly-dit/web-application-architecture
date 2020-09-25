@@ -13,3 +13,7 @@
 
 ##### CSS
 [Ex1](./week1/css/ex1.thml)
+
+##### JS
+[Ex1](./week2/js/ex1.js)
+
