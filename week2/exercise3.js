@@ -1,12 +1,10 @@
 const squared = (n1) => {
     let result = n1 * n1;
-    console.log("Result : " + result);
     return result;
 }
 
 const adder = (n1) => {
     let result = n1 + 1;
-    console.log("Result : " + result);
     return result;
 }
 
