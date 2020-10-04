@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div style="border:1px black solid;"
+     class="js-names">
+
+    <input type="text" class="js-textfield" />
+    <button class="js-button">
+        Enable the Textfield
+    </button>
+
+</div>
+
+
+<script>
+
+    let enableFields = function() {
+        document.querySelector( '.js-textfield' )
+            .removeAttribute( 'disabled' );
+        document.querySelector( '.js-button' )
+            .removeAttribute( 'disabled' );
+    }
+    let disableFields = function() {
+        document.querySelector( '.js-textfield' )
+            .setAttribute( 'disabled', true );
+        document.querySelector( '.js-button' )
+            .setAttribute( 'disabled', true );
+    }
+
+
+    let parse = function( response ) {
+        let element = document.querySelector( '.js-names' );
+
+        element.innerHTML =
+            JSON.parse( response )
+                .map( element => element.name )
+                .join(',');
+        enableFields();
+    }
+    let errorHandler = function() {
+        console.log( 'error' );
+        enableFields();
+    }
+    new Promise( function( resolve, reject ) {
+        disableFields();
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if ( this.status === 200 && this.readyState === 4 ) {
+                resolve( this.response );
+            }
+        }
+        request.onerror = function() {
+            reject( new Error( this.statusText ) );
+        }
+        request.open(
+            'GET',
+            'http://erroneousurl.com/users'
+        );
+        request.send();
+    } ).then( parse )
+        .catch( errorHandler );
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div style="border:1px black solid;"
+     class="js-names"></div>
+
+
+<script>
+    let parse = function (response) {
+        let element = document.querySelector('.js-names');
+        element.innerHTML =
+            JSON.parse(response)
+                .map(element => element.name)
+                .join(',');
+    }
+
+    let errorHandler = function () {
+        console.log('error');
+    };
+
+    new Promise(function (resolve, reject) {
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (this.status === 200 && this.readyState === 4) {
+                resolve(this.response);
+            }
+        }
+        request.open('GET',
+            'http://jsonplaceholder.typicode.com/users'
+        );
+        request.send();
+    }).then(parse).catch(errorHandler);
+
+
+</script>
+</body>
+</html>
