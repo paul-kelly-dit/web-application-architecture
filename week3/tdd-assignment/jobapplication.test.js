@@ -12,11 +12,6 @@ let applicantB = {
     bachelorsDegree: true
 }
 
-let applicantC = {
-    experienceInYears: 2,
-    industry: "hospitality",
-    bachelorsDegree: false
-}
 
 test('processApplicant - should return HIRE if job applicant has 3 years or more experience in hospitality with a bachelors degree', () => {
     expect(jobApplicationService.processApplication(applicantA)).toBe("HIRE");
