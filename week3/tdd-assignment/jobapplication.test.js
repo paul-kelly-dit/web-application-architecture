@@ -7,7 +7,7 @@ let applicantA = {
 }
 
 let applicantB = {
-    experienceInYears: 2,
+    experienceInYears: 3,
     industry: "hospitality",
     bachelorsDegree: true
 }
