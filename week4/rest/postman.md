@@ -10,7 +10,7 @@ switch to the Body tab
 
 ```$xslt
 
-[
+
     {
         "id": 11,
         "name": "Krishna Rungta",
@@ -34,7 +34,7 @@ switch to the Body tab
             "bs": "harness real-time e-markets"
         }
     }
-]
+
 ```
 
 Click Send.
