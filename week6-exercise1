@@ -1,0 +1,10 @@
+
+const myExport = require('./square')
+
+var square = myExport.sqaure
+
+//////////////////////////////////////
+// square.js
+exports.square = function (n) {
+    return n * n
+}
