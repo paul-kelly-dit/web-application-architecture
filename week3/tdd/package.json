@@ -1,6 +1,10 @@
 {
   "scripts": {
+    "start": "react-scripts start",
     "test": "jest"
+  },
+  "dependencies": {
+    "react-scripts": "3.1.0"
   },
   "devDependencies": {
     "jest": "^26.4.2"
