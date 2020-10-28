@@ -2,10 +2,22 @@ const EventEmitter = require('events');
 
 const myEmitter = new EventEmitter();
 
-someFunction = function (){
-    console.log('Something has happened!');
+resetPassword = function (){
+    console.log('Password has changed');
 };
 
-myEmitter.on('Some event', someFunction);
+updateUIOnPasswordReset = function (){
+    console.log('UI - Password successfully updated');
+};
 
-myEmitter.emit('Some event');
+handleError = function (errorCode){
+    console.log('Error handler');
+    console.log('Problem processing : '+ errorCode);
+
+};
+
+myEmitter.on('PASSWORD_RESET', resetPassword);
+myEmitter.on('PASSWORD_RESET', updateUIOnPasswordReset);
+myEmitter.on('error', handleError);
+
+myEmitter.emit('error', 9);
