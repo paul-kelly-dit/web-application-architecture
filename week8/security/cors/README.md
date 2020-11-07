@@ -6,6 +6,10 @@ put the following in your /etc/hosts
 
 ```127.0.0.1 wasec.local sub.wasec.local wasec2.local```
 
+Run index.js, this starts two servers, client and a server on ports 7888 (client), 7889 (server)
+
+```node index.js```
+
 On windows, the following link might help for overriding /etc/hosts
 * [DNS modification Windows](https://blog.kowalczyk.info/article/10c/local-dns-modifications-on-windows-etchosts-equivalent.html)
 
