@@ -21,7 +21,7 @@ router.get('/users', function(req, res, next) {
   })
 });
 
-router.post('/user', function(req, res, next) {
+router.post('/users', function(req, res, next) {
   var newUser = new User(req.body);
   newUser._id = mongoose.Types.ObjectId();
 
@@ -38,7 +38,7 @@ router.post('/user', function(req, res, next) {
 });
 
 
-router.put('/user', function(req, res, next) {
+router.put('/users', function(req, res, next) {
   var user = new User(req.body);
 
   User.update({_id : user.id}, user, function(err) {

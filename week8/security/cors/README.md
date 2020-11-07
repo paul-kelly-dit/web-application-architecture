@@ -1,5 +1,10 @@
 # CORS example
 
+### /etc/hosts 
+
+put the following in your /etc/hosts
+
+```127.0.0.1 wasec.local sub.wasec.local wasec2.local```
 
 You can then visit:
 
