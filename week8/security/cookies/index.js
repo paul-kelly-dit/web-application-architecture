@@ -16,21 +16,6 @@ function server (req, res) {
   }
   let query = qs.parse(url.parse(req.url).query)
 
-  if (query.clear === "on") {
-    res.writeHead('302', {
-      'Set-Cookie': [
-        'example=a;Expires=Wed, 21 Oct 2015 07:28:00 GMT',
-        `example_with_domain=a;Domain=wasec.local;Expires=Wed, 21 Oct 2015 07:28:00 GMT`,
-        `supercookie=a;Expires=Wed, 21 Oct 2015 07:28:00 GMT`,
-        `secure=a;Expires=Wed, 21 Oct 2015 07:28:00 GMT`,
-        `not_secure=a;Expires=Wed, 21 Oct 2015 07:28:00 GMT`,
-      ],
-      'Location': '/'
-    })
-    res.end()
-    return
-  }
-
   let headers = {}
   headers['Set-Cookie'] = []
 
@@ -40,10 +25,6 @@ function server (req, res) {
     if (query.domain === 'on') {
       headers['Set-Cookie'].push(`example_with_domain=test_domain_cookie;Domain=wasec.local`)
     }
-  }
-
-  if (query.super === 'on') {
-    headers['Set-Cookie'].push(`supercookie=test;Domain=local`)
   }
 
   if (query.secure === 'on') {
