@@ -7,7 +7,7 @@ put the following in your /etc/hosts
 ```127.0.0.1 wasec.local sub.wasec.local wasec2.local```
 
 On windows, the following link might help for overriding /etc/hosts
-[https://blog.kowalczyk.info/article/10c/local-dns-modifications-on-windows-etchosts-equivalent.html](DNS modification Windows)
+* [DNS modification Windows](https://blog.kowalczyk.info/article/10c/local-dns-modifications-on-windows-etchosts-equivalent.html)
 
 
 You can then visit:
