@@ -16,6 +16,8 @@ function server (req, res) {
   }
   let query = qs.parse(url.parse(req.url).query)
 
+  // example=test; example_with_domain=test_domain_cookie; not_secure=test
+
   let headers = {}
   headers['Set-Cookie'] = []
 
@@ -52,7 +54,7 @@ function server (req, res) {
 
     if (document.cookie) {
       let cookies = document.cookie.split(';')
-      content = ''
+      content = '';
 
       cookies.forEach(c => {
         content += "<p><code>" + c + "</code></p>"
