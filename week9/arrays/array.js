@@ -1,4 +1,15 @@
 
+// imperative code
+const arrayContainsAnotherArray = (needle, haystack) => {
+    for (let i=0; i < needle.length; i++) {
+        if (haystack.indexOf(needle[i]) === -1)
+            return false;
+    }
+    return true;
+};
+console.log(arrayContainsAnotherArray(["is"], ["is", "haystack", "in", "words", "lots", "the"]));
+
+
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const arr = Array.from('Hello'); // => ['H', 'e', 'l', 'l', 'o']

@@ -1,14 +1,3 @@
-
-// imperative code
-const arrayContainsAnotherArray = (needle, haystack) => {
-    for (let i=0; i < needle.length; i++) {
-        if (haystack.indexOf(needle[i]) === -1)
-            return false;
-    }
-    return true;
-};
-console.log(arrayContainsAnotherArray(["is"], ["is", "haystack", "in", "words", "lots", "the"]));
-
 // Problems with mutation
 
 // With shared state, the order in which function calls are made
