@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  background-color: #25384B;
+  padding: 20px;
+}
+
+.left-container {
+  width: 60%;
+  background-color: #A3CFCC;
+  height: 320px;
+}
+
+.right-container {
+  width: 300px;
+  background-color: #F7CFB6;
+  height: 320px;
+}
+
+.child-element {
+  width: 240px;
+  height: 100px;
+  box-sizing: border-box;
+  background-color: #86C2DE;
+}
