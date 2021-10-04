@@ -1,0 +1,66 @@
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+header, footer {
+  background-color: lightgreen;
+  min-height: 100px;
+  border: 1px solid black;
+}
+
+.main-banner {
+  background-color: lightsalmon;
+  min-height: 100px;
+  border: 1px solid black;
+}
+
+.blogposts {
+  background-color: lightblue;
+}
+
+.blogpost {
+  min-height: 100px;
+  border: 1px solid black;
+}
+
+.contact-form {
+  background-color: lightyellow;
+  min-height: 100px;
+  border: 1px solid black;
+}
+
+.d-none {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    .d-sm-block {
+      display: block;
+    }
+
+    .blogposts {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blogpost {
+      width: 50%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    width: 700px;
+  }
+
+  .blogpost {
+    width: 33.33%;
+  }
+}
