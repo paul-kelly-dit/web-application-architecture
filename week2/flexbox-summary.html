@@ -1,0 +1,60 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="flexbox-summary.css">
+ </head>
+ <body>
+   <h2>Control the first Flex item from the left</h2>
+    <label>
+      Align-self:
+      <button class="as-stretch">stretch</button>
+      <button class="as-flex-start">flex-start</button>
+      <button class="as-flex-end<">flex-end</button>     
+      <button class="as-center">center</button>
+      <button class="as-baseline">baseline</button>
+   </label>
+   <label>
+      Flex-grow:
+      <button class="fg-minus">-</button>
+      <input type="range" class="fg-slider" min="1" max="5" value="1" step="1" />
+      <button class="fg-plus">+</button>     
+      <span class="js-value-fg">1</span>
+   </label>
+   <label>
+      Flex-shrink:
+      <button class="fs-minus">-</button>
+      <input type="range" class="fs-slider" min="1" max="5" value="1" step="1" />
+      <button class="fs-plus">+</button>     
+      <span class="js-value-fs">1</span>
+    </label>
+   <label>
+      Flex-basis:
+      <button class="fb-minus">-</button>
+      <input type="range" class="fb-slider" min="150" max="250" value="200" step="10" />
+      <button class="fb-plus">+</button>    
+      <span class="js-value-fb">200px</span>
+   </label>  
+    <label>
+      Order:
+      <button class="order-m1">-1</button>
+      <button class="order-0">0</button>
+      <button class="order-1">1</button>     
+   </label>     
+   <label class="width-changer">
+      Container width: 
+      <button class="width-minus">-</button>
+      <input type="range" class="width-slider" min="300" max="700" value="600" step="10" />
+      <button class="width-plus">+</button>
+      <span class="js-width-value">600px</span>
+   </label>
+   <div class="container js-variable-container" style="width: 600px;">
+     <div class="item w-200 js-variable-item variable-item" style=" flex-grow: 1; flex-shrink: 1; align-self: stretch; flex-basis: 200px; order: 0;">1</div>
+     <div class="item w-200">2</div>
+     <div class="item w-200">3</div>
+   </div>        
+   <div class="ruler w-600">
+     600px
+   </div>  
+      
+   <script src="flexbox-summary.js"></script>
+ </body>
+</html>

@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    height: 100px;
+    background-color: darkgreen;
+}
+
+label {
+    display: block;
+}
+
+.item {
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: lightblue;
+}
+
+.ruler {
+    height: 25px;
+    line-height: 25px;
+    color: white;
+    background-color: black;
+    
+}
+
+.width-changer {
+    margin: 35px 10px;
+    display: block;
+}
+
+.w-200 {
+    width: 200px;
+}
+
+.w-600 {
+    width: 600px;
+}
+
+.variable-item {
+    background-color: lightgoldenrodyellow;
+}
