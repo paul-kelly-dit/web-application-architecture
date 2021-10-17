@@ -1,9 +1,9 @@
-/*============
-  basic reset 
-============== */
+/* =========
+ basic reset 
+========== */
 body {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 /*=============================
@@ -16,22 +16,23 @@ body {
       grid-template-rows: 1fr 90px;
       grid-template-columns: 1fr;
 			grid-template-areas: "content"
-                           "footer"
+                           "footer";
+      font-family: 'Lato', sans-serif;
+      color: #222;
+      font-size: 0.8em;
 		}
 
 .main {
-  background-color: #2c3e50;
   grid-area: content;
 }
 
 .footer {
-  background-color: #c0392b;
+  background-color: royalblue;
   grid-area: footer;
 }
 
 .aside {
-  color: rgba(255,255,255,0.8);
-  background-color: #7f8c8d;
+  background-color: #f2f2f2;
   grid-area: sidebar;
 }
 
@@ -50,9 +51,12 @@ body {
 
 .main__header {
   display: grid;
+  background-color: #4e4e4e;
   color: rgba(255,255,255,0.9);
   grid-template-areas: "img"
                        "dtls"; 
+  margin-bottom: 10px;
+  padding: 20px;
 }
 
 .main__header > .img {
@@ -62,12 +66,56 @@ body {
   grid-area: dtls;
 } 
 
+.main__body {
+  padding: 8px;
+  background-color: #fff;
+}
 .main__body > div {
+  padding: 8px;
   display:flex;
+}
+.main__body > div:nth-child(2n) {
+    background-color: #f2f2f2;
 }
 
 .main__body > div p{
   flex: 0 0 25%;
+}
+
+/*===============
+  clean ups.
+===============*/
+
+.details {
+	display: flex;
+	flex-direction: column;
+	font-weight: 300;
+	color: #fff;
+	padding-left: 50px;  
+}
+
+.details div:nth-child(1){
+	margin-bottom: auto;
+}
+
+.details div:nth-child(2){
+	margin-top: 0;
+}
+
+.details div:nth-child(2) i.fa{
+	font-size: 0.9rem;
+	padding: 0 0.7rem;
+	font-weight: 300;
+}
+
+.details div:nth-child(1) p:first-child{
+	font-size: 1.8rem;
+	margin: 0 0 10px;
+}
+
+.details div:nth-child(1) p:not(:first-child){
+	font-size: 0.9rem;
+	margin: 2px 0;
 }
 
 /*=============================
@@ -105,6 +153,10 @@ Mobile: Phones
   .sm--hide {
     display: none;
   } 
+
+	.sm-text-right {
+		text-align: right;
+	}
   .main__header {
     justify-items: center;
   }
@@ -114,8 +166,10 @@ Mobile: Phones
   .img > img {
     width: 150px
   }
+  .main__body > div p{
+    flex: 0 0 50%;
+  }
 }
-
 
 
 
