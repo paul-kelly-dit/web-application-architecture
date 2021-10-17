@@ -8,6 +8,8 @@ body {
 
 /*=============================
   grid set up
+  grid-template-columns: 40px 1fr; - The 40px represents the fixed width of the sidebar and 1fr allows for 
+the main content section to fill the remaining available space.
 ===============================*/
 body {
       display: grid;
