@@ -1,0 +1,17 @@
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: green;
+  margin-left: 40px;
+}
+
+.bordered {
+  border: 2px solid pink
+}
+
+
+article.product {
+  background-color: blue;
+}

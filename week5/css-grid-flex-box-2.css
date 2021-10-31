@@ -1,142 +1,138 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 body {
-    background-color: #eee;
-    color: #434344;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-}
-
-/* Page Layout */
-
-.container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-}
-
-/* Header */
-
-header{
+    text-align: center;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  }
+  
+  p {
+    font-size: 1.5rem;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 0.4fr 0.3fr 0.3fr;
+  /*   grid-template-rows: auto 25px auto 25px auto 25px auto 25px auto 25px auto; */
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+  }
+  .grid {
+    background-color: #444;
+    color: #fff;
+    padding: 25px;
+    font-size: 3rem;
+  }
+  .header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
     color: #9f9c9c;
-    padding: 20px 0;
-    margin-bottom: 40px;
     text-transform: uppercase;
     border-bottom: 2px solid #b0e0ea;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
-}
+    align-items: center;
+  }
 
-header nav ul {
-    display: flex;
-    align-items: baseline;
-    list-style-type: none;
-}
-
-header nav li {
-    margin-right: 15px;
-}
-
-header button {
-    border: none;
-    padding: 8px 25px;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 1.25rem;
-    background-color: #51bb7b;
-}
-
-/* Main Section */
-
-.wrapper {
-    display: flex;
-}
-
-.main {
-    flex: 3;
-}
-
-.main h2 {
-    font-size: 32px;
-    margin: 1rem 0;
-    color: #50c6db;
-}
-
-.main p {
-    font-size: 1rem;
-    margin-bottom: .75rem;
-}
-
-.main img {
-    width: 100%;
-}
-
-/* Sidebar */
-
-.sidebar {
-    padding: 20px;
-    flex: 1;
-    margin-right: 60px;
-    border-top: 3px solid #693f7e;
-    background-color: #f9f9f9;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  margin-top: 1rem;
-  font-size: .75rem;
-}
-
-.sidebar ul > li {
-    padding: .25rem 0;
-}
-
-.logo {
-  font-size: 2rem;
-  margin-right: 1.5rem;
-  color: #50c6db;
-}
-
-/* Footer */
-
-footer {
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 60px;
-    padding: 20px 0;
-    background-color: #9f9c9c;
-}
-
-footer p {
-    color: #434344;
-    font-size: 12px;
-    padding: 10px;
-}
-
-
-@media (max-width: 600px) {
-    .wrapper {
-        flex-direction: column;
+  .hero {
+    grid-column: 1 / 2;
+    grid-row-start: 2 / 3;
+    background-color: #d5c9e2;
+    min-height: 300px;
+  }
+  
+  .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+    min-height: 400px;
+    background-color: #a0c263;
+  }
+  
+  .content {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    min-height: 500px;
+    background-color: #f5c531;
+  }
+  
+  .extra {
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+    min-height: 200px;
+    background-color: #898989;
+  }
+  
+  .related-images {
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    min-height: 150px;
+    background-color: #2BB673;
+  }
+  
+  .related-posts {
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+    background-color: #f3cddd;
+  }
+  
+  .footer {
+    grid-column: 1 / 4;
+    grid-row: 6 / 7;
+    background-color: #FFA500;
+  }  
+  
+  
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+      .header {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 1;
+      grid-row-end: 2;
     }
-
-    .main {
-        margin-right: 0;
-        margin-bottom: 60px;
+    
+    .hero {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 2;
+      grid-row-end: 3;
     }
-}
+    
+    .sidebar {
+      
+    }
+    
+    .content {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 3;
+      grid-row-end: 6;
+      background: #f5c531;
+      height: 400px;
+    }
+   
+    .extra {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 7;
+      grid-row-end: 8;
+    }
+    
+    .related-images {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    
+    .related-posts {
+      
+    }
+    
+    .footer {
+      
+    }
+   
+    
+  }  
+      
+      

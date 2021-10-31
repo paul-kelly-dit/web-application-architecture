@@ -18,6 +18,11 @@ handleError = function (errorCode){
 
 myEmitter.on('PASSWORD_RESET', resetPassword);
 myEmitter.on('PASSWORD_RESET', updateUIOnPasswordReset);
-myEmitter.on('error', handleError);
+// myEmitter.on('error', handleError);
+
+// myEmitter.emit('error', 9);
+
+
+
 
 myEmitter.emit('error', 9);
