@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)"></script>
+<script>
+  
+  let data = [1,2,3]
+const userIds = _.map(
+  _.flow(
+    (a) => a + a,
+    (a) => a * a,
+    (a) => a - 10
+  )
+)(data);
+
+console.log(userIds);
+
+</script>
+  
+</body>
+</html>
