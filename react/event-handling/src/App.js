@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   handleSubmit= (stateEvent) => {
-    // stateEvent.preventDefault();
+    stateEvent.preventDefault();
     console.log('You clicked submit.');
     this.setState({
       timesPressed: this.state.timesPressed+1,
