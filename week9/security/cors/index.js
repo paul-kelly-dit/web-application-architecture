@@ -11,6 +11,7 @@ require('http').createServer((req, res) => {
   }
 
   res.writeHead(200, headers);
+  console.log('about to send back text')
   res.end(`text coming from ${req.headers.host}`);
 }).listen(7889)
 
