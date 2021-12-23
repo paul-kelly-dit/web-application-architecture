@@ -20,7 +20,10 @@ const counterReducer = (state = initialState, action) => {
 const add = (payload) => ({ type: 'PLUS', payload });
 const subtract = (payload) => ({ type: 'MINUS', payload });
 
-const store = createStore(counterReducer);
+const store = createStore(
+  counterReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 
 const initialstate = store.getState();
 
