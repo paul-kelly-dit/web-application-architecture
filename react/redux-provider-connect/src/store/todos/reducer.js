@@ -1,6 +1,6 @@
 const initialState = Object.freeze([]);
 
-const todos = (state = initialState, action) => {
+const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TODO': {
       return state.concat(action.payload);
@@ -25,4 +25,4 @@ const todos = (state = initialState, action) => {
   }
 };
 
-export default todos;
+export default todosReducer;
