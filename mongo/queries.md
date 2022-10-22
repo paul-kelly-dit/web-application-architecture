@@ -88,3 +88,72 @@ db.tasks.find({
         $gte: 1,
     },
 });
+
+
+#### $in operator
+db.tasks.insertMany([
+{
+      name: 'Task 1',
+      priority: 1,
+},
+{
+      name: 'Task 2',
+      priority: 2,
+},
+{
+      name: 'Task 3',
+      priority: 3,
+}
+]);
+
+db.tasks.find({
+    priority: {
+        $in: [1, 3]
+    }
+});
+
+
+db.tasks.find({status: { $ne: 'completed',},});
+
+
+#### And operator
+
+db.tasks.insertMany([
+{
+  name: 'Task 1',
+  priority: 1,
+  status: 'pending',
+},
+{
+  name: 'Task 2',
+  priority: 1,
+  status: 'completed',
+},
+{
+  name: 'Task 3',
+  priority: 2,
+  status: 'pending',
+}
+]);
+
+
+db.tasks.find({
+    $and: [
+        {
+            priority: 1,
+        },
+        {
+            status: 'pending',
+        }
+    ]
+});
+
+#### Exists
+
+db.tasks.find({
+    priority: {
+        $exists: true
+    }
+});
+
+
