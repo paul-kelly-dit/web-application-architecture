@@ -156,4 +156,91 @@ db.tasks.find({
     }
 });
 
+#### Size
+
+db.tasks.insertMany([
+{
+  name: 'Task 1',
+  categories: [
+  {
+      key: 'category_a'
+  },
+  {
+      key: 'category_b'
+  }
+  ]
+},
+{
+  name: 'Task 2',
+  categories: [
+  {
+      key: 'category_a'
+  },
+  ]
+}
+]);
+
+db.tasks.find({
+    categories: {
+        $size: 2
+    }
+});
+
+
+#### Return specific fields from embedded docs
+
+db.tasks.insertMany([
+{
+  name: 'Task 1',
+  assignee: {
+      id: 100,
+      username: 'user_a',
+  }
+},
+{
+  name: 'Task 2',
+  assignee: {
+      id: 101,
+      username: 'user_b',
+  }
+}
+]);
+
+db.tasks.find({}, {
+    'assignee.username': 1
+});
+
+#### Sort
+db.tasks.insertMany([
+{
+  name: 'Task 1',
+  priority: 1
+},
+{
+  name: 'Task 2',
+  priority: 2
+}
+]);
+
+db.tasks.find().sort({priority: -1});
+
+
+#### update
+
+db.tasks.insertOne({
+  name: "Learn MongoDB Topic 1",
+  date: new Date(),
+  priority: 1,
+  status: "pending",
+  user: "onkar",
+  assignee: "onkar"
+});
+
+db.tasks.updateOne({
+   _id: ObjectId("60f7d855b307d94301b9cb90")
+}, {
+       $set: {
+       status: "completed"
+   }
+});
 
