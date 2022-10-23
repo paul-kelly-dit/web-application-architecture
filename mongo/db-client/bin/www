@@ -10,9 +10,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 
 var mongoDB = 'mongodb://127.0.0.1/users';
-mongoose.connect(mongoDB, {
-  useMongoClient: true
-});
+mongoose.connect(mongoDB);
 
 //Get the default connection
 var db = mongoose.connection;

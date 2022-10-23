@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var router = express.Router();
 
 router.get('/users', function(req, res, next) {
-  var searchQuery = {};
+  let searchQuery = {};
 
   if(req.query.name)
     searchQuery = { name: req.query.name };
@@ -22,7 +22,7 @@ router.get('/users', function(req, res, next) {
 });
 
 router.post('/users', function(req, res, next) {
-  var newUser = new User(req.body);
+  let newUser = new User(req.body);
   newUser._id = mongoose.Types.ObjectId();
 
   newUser.save(function(err) {
@@ -30,27 +30,13 @@ router.post('/users', function(req, res, next) {
       console.log("not saved!");
       res.status(400);
       res.send();
+    } else {
+      console.log("saved!");
+      res.send({ id : newUser._id });
     }
 
-    console.log("saved!");
-    res.send({ id : newUser._id });
   });
 });
 
-
-router.put('/users', function(req, res, next) {
-  var user = new User(req.body);
-
-  User.update({_id : user.id}, user, function(err) {
-    if (err) {
-      console.log("not updated!");
-      res.status(400);      
-      res.send();
-    }
-
-    console.log("updated!");
-    res.send({status: 'ok'});
-  });
-});
 
 module.exports = router;
