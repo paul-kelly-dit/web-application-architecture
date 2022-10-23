@@ -244,3 +244,50 @@ db.tasks.updateOne({
    }
 });
 
+db.tasks.updateOne({
+  name: "Learn MongoDB Topic 1"
+}, 
+{
+  $set: {
+     status: "completed",
+     progress; 10,
+     priority: 2
+  }
+});
+
+#### $inc
+
+db.tasks.updateOne({
+  name: "Learn MongoDB Topic 1"
+}, 
+{
+  $inc: {
+  progress: 10
+}
+});
+
+#### $push 
+
+db.tasks.updateOne({
+  name: "Learn MongoDB Topic 1"
+}, 
+{
+  $push: {
+      tags: "learning"
+  }
+});
+
+
+#### Delete a document
+db.tasks.deleteOne({
+      _id: ObjectId("60f7d855b307d94301b9cb90")
+});
+
+db.tasks.deleteMany({
+  _id: {
+      $in: [
+        ObjectId("60f7d855b307d94301b9cb90"), 
+        ObjectId("60f7d855b307d94301b9cb91")
+      ]
+  }
+});
